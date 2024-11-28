@@ -9,7 +9,7 @@ class Firework { //<>//
   Spark[] sparks = new Spark[35];
 
   Firework(float tempX, float tempY) {
-    //fill those some of those aforementioned variables wwith information
+    //fill  some of those aforementioned variables with information
     //(and the PVector)
     location = new PVector(0, 0);
     velocity = new PVector(1, -1);
