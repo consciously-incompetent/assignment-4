@@ -3,6 +3,13 @@ Firework[] fireworks = new Firework[5];
 Menu menu;
 //variable for which rocket to acitvate
 int activate = -1;
+
+//menu variable
+float g_mult = 0;
+float v_mult = 1;
+int spark_diff = 0;
+
+
 //marks down if the rockets have been made yet or not.
 //why? so that they arn't repeatadly made at the start of each draw loop
 boolean depleted = false;
@@ -29,7 +36,7 @@ void draw() {
   //launching each firework but only if a clicked variable is true
   if (!depleted) {
     for (int i = 0; i < fireworks.length; i++) {
-      fireworks[i] = new Firework(40 + (i*80), height-45);
+      fireworks[i] = new Firework(40 + (i*80), height-45,g_mult,v_mult);
       depleted = true;
     }
   }
@@ -72,6 +79,19 @@ void draw() {
       }
     
     }
+    
+    if (key == 'g'){
+    g_mult += 0.1;
+    }
+    
+    if(key == 'v'){
+    v_mult += 0.1;
+    }
+    
+    if (key == 's'){
+    spark_diff += 5;
+    }
+    
     //println(activate);
     //the above println was for debuging
   }
