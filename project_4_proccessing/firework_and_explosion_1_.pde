@@ -15,6 +15,7 @@ int spark_diff = 0;
 boolean depleted = false;
 boolean menu_ONOFF = false;
 void setup() {
+  println("press m for menu and space to reset the rockets ");
   // and creating the size of the background
   size(400, 400);
   menu = new Menu();

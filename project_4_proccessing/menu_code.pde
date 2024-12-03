@@ -15,7 +15,7 @@ B = random(255);
 void display(){
 rectMode(CORNER);
 fill(R,G,B);
-rect(25,25, 100,100);
+rect(100,100, 200,200);
 
 
 
