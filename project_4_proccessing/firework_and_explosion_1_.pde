@@ -22,6 +22,12 @@ boolean depleted = false;
 boolean menu_ONOFF = false;
 void setup() {
   println("press m for menu and space to reset the rockets ");
+  println("press v too increase velocity");
+  println("press g too increase gravity");
+  println("press s too increase the number of sparks the firework makes");
+  println("press i,o or p too increase the R, G and B of the sparks");
+  println("press shift any of the above commands to decrease their values isntead");
+  
   // and creating the size of the background
   size(400, 400);
   menu = new Menu();
@@ -84,11 +90,11 @@ void keyPressed() {
   }
 
   if (key == 'g') {
-    g_mult += 0.1;
+    g_mult += 0.01;
   }
 
   if (key =='G') {
-    g_mult -= 0.1;
+    g_mult -= 0.01;
   }
 
 
