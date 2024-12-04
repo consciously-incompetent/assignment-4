@@ -9,6 +9,12 @@ float g_mult = 0;
 float v_mult = 1;
 int spark_diff = 0;
 
+//colour variables
+int s_R = 250;
+int s_G = 255;
+int s_B = 90;
+int CI = 20;
+
 
 //marks down if the rockets have been made yet or not.
 //why? so that they arn't repeatadly made at the start of each draw loop
@@ -72,12 +78,9 @@ void keyPressed() {
     depleted = false;
   }
 
+
   if (key == 'm') {
-    if (!menu_ONOFF) {
-      menu_ONOFF = true;
-    } else {
-      menu_ONOFF = false;
-    }
+    menu_ONOFF =!menu_ONOFF;
   }
 
   if (key == 'g') {
@@ -93,19 +96,52 @@ void keyPressed() {
   if (key == 'v') {
     v_mult += 0.1;
   }
-  
-  if (key == 'V'){
-  v_mult -= 0.1;
+
+  if (key == 'V') {
+    v_mult -= 0.1;
   }
 
   if (key == 's') {
     spark_diff += 5;
   }
 
+  if (key == 'S') {
+    if (spark_diff > -30) {
+      spark_diff -= 5;
+    }
+  }
+
   if (key == 'r') {
     g_mult = 0;
     v_mult = 1;
     spark_diff = 0;
+    s_R = 250;
+    s_G = 255;
+    s_B = 90;
+  }
+
+  if (key == 'i') {
+    s_R += CI;
+  }
+
+  if (key == 'o') {
+    s_G += CI;
+  }
+
+  if (key == 'p') {
+    s_B += CI;
+  }
+
+  if (key == 'I') {
+    s_R -= CI;
+  }
+
+  if (key == 'O') {
+    s_G -= CI;
+  }
+
+  if (key == 'P') {
+    s_B -= CI;
   }
 
   //println(activate);

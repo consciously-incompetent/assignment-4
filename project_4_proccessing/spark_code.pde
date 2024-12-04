@@ -21,7 +21,7 @@ class Spark {
   void display() {
     //draws the spark
     noStroke();
-    fill(250, 255, 90);
+    fill(s_R, s_G, s_B);
     ellipseMode(CENTER);
     ellipse(location.y, location.x, 2, 2);
   }
