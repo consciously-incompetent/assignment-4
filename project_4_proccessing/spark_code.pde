@@ -29,6 +29,7 @@ class Spark {
   void flie() {
     //moves the spark
     location.add(velocity);
+    //the velocity and gravity multipliers are applied here
     velocity.x *= 1.1*v_mult;
     velocity.y *= 1.1*v_mult;
     //the below velocity change is meant to represent gravity

@@ -1,15 +1,19 @@
 //making an empy list for the fireworks //<>//
 Firework[] fireworks = new Firework[5];
+//making an emppty variable for the menu 
 Menu menu;
 //variable for which rocket to acitvate
 int activate = -1;
 
 //menu variable
+// variables for the Graivty multiplier, velocty multiplirt and spark differential
 float g_mult = 0;
 float v_mult = 1;
 int spark_diff = 0;
 
 //colour variables
+//variables for the colour of the sparks produced by the fireworks
+//they are variables so the user can change them 
 int s_R = 250;
 int s_G = 255;
 int s_B = 90;
@@ -19,8 +23,13 @@ int CI = 20;
 //marks down if the rockets have been made yet or not.
 //why? so that they arn't repeatadly made at the start of each draw loop
 boolean depleted = false;
+
+//variable toturn the menu on or off
 boolean menu_ONOFF = false;
+
 void setup() {
+  
+  //instructions on how to use the game 
   println("press m for menu and space to reset the rockets ");
   println("press v too increase velocity");
   println("press g too increase gravity");
@@ -30,10 +39,9 @@ void setup() {
   
   // and creating the size of the background
   size(400, 400);
+  
+  //setting up the meny variable 
   menu = new Menu();
-  // for (int i = 0; i < fireworks.length; i++) {
-  //fireworks[i] = new Firework(40 + (i*80), height-45);
-  //  }
 }
 
 
@@ -45,14 +53,19 @@ void draw() {
   rect(0, height-20, width, 20);
   fill(171, 180, 67, 175);
   ellipse(50, 40, 30, 30);
+  
   //displaying each firework
-  //launching each firework but only if a clicked variable is true
+  //launching each firework but only if depleted variable is false
+  // this to allow resetting the fireworks 
   if (!depleted) {
     for (int i = 0; i < fireworks.length; i++) {
       fireworks[i] = new Firework(40 + (i*80), height-45, g_mult, v_mult);
       depleted = true;
     }
+    
   }
+  
+  //go through each firework and display it also checks if it should launch it
   for (int i = 0; i < fireworks.length; i++) {
     fireworks[i].display();
     fireworks[i].Launch();
@@ -68,7 +81,7 @@ void draw() {
       fireworks[i].exploded();
     }
   }
-
+// if menu is on display it 
   if (menu_ONOFF) {
     menu.display();
   }
@@ -84,11 +97,13 @@ void keyPressed() {
     depleted = false;
   }
 
-
+// when m is pressed it inverts whatever is in the menu_ONOFF variable
   if (key == 'm') {
     menu_ONOFF =!menu_ONOFF;
   }
-
+//below are the changes to the variables of the rocket and its spark 
+//they all boil down to if x key is press increase Y variable by a certain amount
+//also they all have if X(the key and shift held down) decrease Y variable by a certain amount
   if (key == 'g') {
     g_mult += 0.01;
   }
