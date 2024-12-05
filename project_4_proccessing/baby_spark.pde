@@ -16,18 +16,21 @@ class Baby_spark {
 
     location.x = tempX;
     location.y = tempY;
+    
+    g_mult = temp_g_mult;
+    v_mult = temp_v_mult;
   }
 
 
   void display() {
     fill(s_B, s_R, s_G);
-    rect(location.x, location.y, 2, 2);
+    rect(location.y, location.x, 2, 2);
   }
 
   void move() {
     location.add(velocity);
-    velocity.x *= 1.1;
-    velocity.y *= 1.1;
+    velocity.x *= 1.1*v_mult;
+    velocity.y *= 1.1*v_mult;
   }
 
   void update() {
