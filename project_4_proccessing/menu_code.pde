@@ -23,7 +23,7 @@ fill(R,G,B);
 rect(100,100, 250,250);
 fill(0,0,0);
 //rights out text thats tells relevent information about the firework like colour velocity and how many sparks are in it
-text("gravity = " + round(g_mult*100) + "  velocity = " +  round(v_mult*10) + "    sparks = " + (spark_diff+35),110,125);
+text("gravity = " + round(g_mult*100) + "  velocity = " +  round(v_mult*100) + "    sparks = " + (spark_diff+35),110,125);
 // this cube is used to show the user the colour of the sparks 
 fill(s_R,s_G,s_B);
 rect(250,250, 25,25);

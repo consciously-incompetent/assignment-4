@@ -55,7 +55,6 @@ class Firework { //<>//
     //first it checks if the exploded variable is true if its not we fill the emptyu sparks list
     if (!exploded) {
       for (int i = 0; i < sparks.length; i++) {
-
         sparks[i] = new Spark(location.x, location.y, g_mult, v_mult);
       }
     }

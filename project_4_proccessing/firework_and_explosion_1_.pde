@@ -7,7 +7,7 @@ int activate = -1;
 
 //menu variable
 // variables for the Graivty multiplier, velocty multiplirt and spark differential
-float g_mult = 0;
+float g_mult = 1;
 float v_mult = 1;
 int spark_diff = 0;
 
@@ -19,6 +19,8 @@ int s_G = 255;
 int s_B = 90;
 int CI = 20;
 
+
+boolean secondary = false;
 
 //marks down if the rockets have been made yet or not.
 //why? so that they arn't repeatadly made at the start of each draw loop
@@ -115,11 +117,11 @@ void keyPressed() {
 
 
   if (key == 'v') {
-    v_mult += 0.1;
+    v_mult += 0.01;
   }
 
   if (key == 'V') {
-    v_mult -= 0.1;
+    v_mult -= 0.01;
   }
 
   if (key == 's') {
@@ -133,12 +135,13 @@ void keyPressed() {
   }
 
   if (key == 'r') {
-    g_mult = 0;
+    g_mult = 1;
     v_mult = 1;
     spark_diff = 0;
     s_R = 250;
     s_G = 255;
     s_B = 90;
+    secondary = false;
   }
 
   if (key == 'i') {
@@ -164,7 +167,9 @@ void keyPressed() {
   if (key == 'P') {
     s_B -= CI;
   }
-
+  if (key == ']') {
+    secondary = !secondary;
+  }
   //println(activate);
   //the above println was for debuging
 }
