@@ -7,7 +7,7 @@ class Spark {
   int spark_diff = 0;
   boolean explode = false;
   int flight_counter;
-  Baby_spark[] Baby_sparks = new Baby_spark[5];
+  Baby_spark[] Baby_sparks = new Baby_spark[5 + round(spark_diff/4)];
 
   Spark(float tempY, float tempX, float temp_g_mult, float temp_v_mult) {
     flight_counter = 0;

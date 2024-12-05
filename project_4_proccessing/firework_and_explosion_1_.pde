@@ -32,12 +32,13 @@ boolean menu_ONOFF = false;
 void setup() {
   
   //instructions on how to use the game 
-  println("press m for menu and space to reset the rockets ");
+  println("press m for menu and space to apply any changes made and to reset the rocket the rockets ");
   println("press v too increase velocity");
   println("press g too increase gravity");
   println("press s too increase the number of sparks the firework makes");
   println("press i,o or p too increase the R, G and B of the sparks");
   println("press shift any of the above commands to decrease their values isntead");
+  println("press ] key to set up a secondary round of explosions");
   
   // and creating the size of the background
   size(400, 400);

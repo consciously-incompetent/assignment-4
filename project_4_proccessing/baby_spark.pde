@@ -29,8 +29,8 @@ class Baby_spark {
 
   void move() {
     location.add(velocity);
-    velocity.x *= 1.1*v_mult;
-    velocity.y *= 1.1*v_mult;
+    velocity.x *= 1.05*v_mult;
+    velocity.y *= 1.05*v_mult;
   }
 
   void update() {
